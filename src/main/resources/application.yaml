@@ -1,24 +1,3 @@
-server:
-  port: 8081
-
 spring:
-  application:
-    name: zuul-service
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: routes
-
-eureka:
-  instance:
-    preferIpAddress: true
-    leaseRenewalIntervalInSeconds: 1
-    leaseExpirationDurationInSeconds: 2
-  client:
-    registerWithEureka: true
-    fetchRegistry: true
-    serviceUrl:
-      defaultZone: ${EUREKA_URI:http://localhost:8080/eureka}
-
+  profiles:
+    active: ${profile}
